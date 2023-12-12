@@ -1,152 +1,195 @@
-/* Reset some default styles and add general styling */
-body, h1, h2, h3, p, ul, li {
+/* Basic Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #f5f5f5; /* Light gray background color */
-    color: #333; /* Dark text color */
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333;
 }
 
+/* Container */
 .container {
-    width: 80%;
-    margin: 0 auto;
+    width: 90%;
+    margin: auto;
+    max-width: 1200px;
 }
 
-/* Header styling */
+/* Header */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    color: #fff;
-    padding: 15px 0;
-    z-index: 1000;
-}
-
-.logo img {
-    max-height: 50px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-    margin: 0 20px;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-/* Body section styling */
-section {
-    padding: 50px 0;
+    background-color: #4A4E69; /* Dark Blue Shade */
+    color: white;
+    padding: 1rem 0;
     text-align: center;
 }
 
-.hero {
-    /* Styles for the hero section */
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
 }
 
-/* Gallery Section styling */
-#gallery {
-    background-color: #87CEEB; /* Light Blue background color */
-    padding: 50px 0;
+header nav ul li {
+    margin: 0 15px;
 }
 
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #F2E9E4; /* Light Shade */
+}
+
+/* Gallery Container */
 .gallery-container {
     display: flex;
-    justify-content: center; /* Center the gallery items vertically */
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Ensures items are in a single line */
+    justify-content: space-between; /* Distributes space between items */
 }
 
 .gallery-item {
-    flex: 0 0 20%; /* Adjust the width of gallery items as needed */
-    margin: 0 10px; /* Add margin between gallery items */
+    flex: 1; /* Each item flexes to fill the container */
+    margin: 5px; /* Adds a little space around each item */
+    max-width: calc(25% - 10px); /* Calculation to ensure 4 items fit in a row */
 }
 
 .gallery-item img {
+    width: 100%; /* Image takes the full width of its container */
+    height: auto; /* Maintains the aspect ratio of the images */
+    border-radius: 8px; /* Optional: rounded corners */
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .gallery-container {
+        flex-wrap: wrap; /* Allows items to wrap onto new lines */
+    }
+
+    .gallery-item {
+        max-width: calc(50% - 10px); /* 2 items per row on smaller screens */
+    }
+}
+
+
+
+/* Ensure the container is full width */
+.container {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.1);
 }
 
 
-.gallery-item img:hover {
-    transform: scale(1.1);
-}
 
-/* About Section styling */
+
+
+/* About Us Section Styling */
 .about {
-    text-align: center;
-    margin-bottom: 50px;
+    background-color: #f4f4f4; /* Light grey background for contrast */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font style */
+    text-align: center; /* Centered text */
 }
 
-/* Main Content Section styling */
-.main.content {
-    text-align: center;
+.about h2 {
+    color: #333; /* Darker color for heading */
+    margin-bottom: 10px;
+    font-size: 24px; /* Larger font size for heading */
 }
 
-.main.content h2 {
-    color: #333;
+.about p {
+    color: #666; /* Slightly lighter color for paragraph */
+    line-height: 1.6; /* Improved line spacing for readability */
 }
 
-/* Content Subsection styling */
+.about a {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 15px;
+    background-color: #4A4E69; /* Dark Blue Shade */
+    color: white;
+    border-radius: 5px; /* Rounded corners for the button */
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.about a:hover {
+    background-color: #373B53; /* Slightly darker shade on hover */
+}
+/* Scholarships Section Styling */
 .content-subsection {
-    margin-bottom: 30px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    font-family: 'Arial', sans-serif; /* Clear, readable font */
 }
 
 .content-subsection h2 {
-    color: #333;
+    color: #4A4E69; /* Professional dark blue */
+    margin-bottom: 15px;
+    font-size: 22px; /* Prominent, but not overpowering font size */
 }
 
 .content-subsection ul {
-    list-style: none;
+    list-style-type: none; /* Removes default bullet points */
     padding: 0;
 }
 
 .content-subsection ul li {
+    background-color: #ffffff; /* White background for list items */
+    margin-bottom: 10px; /* Space between list items */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners for list items */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for list items */
+}
+
+.content-subsection ul li a {
+    color: #333; /* Dark grey for readability */
+    text-decoration: none; /* No underlines for a clean look */
+    transition: color 0.3s ease;
+}
+
+.content-subsection ul li a:hover {
+    color: #4A4E69; /* Dark blue on hover for interaction feedback */
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+    }
+
+    .gallery-container {
+        flex-direction: column;
+    }
+}
+
+/* Forms Styling */
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
     margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ddd;
 }
 
-/* Footer Section styling */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
+input[type=submit] {
+    background-color: #4A4E69;
+    color: white;
+    cursor: pointer;
 }
 
-.social-media {
-    text-align: center;
-}
-
-.social-icons a {
-    margin: 0 15px;
-}
-
-/* Contact Section styling */
-#contact {
-    background-color: #f5f5f5;
-    padding: 50px 0;
-}
-
-.contact-info {
-    text-align: center;
-}
-
-.contact-info p {
-    margin: 10px 0;
+input[type=submit]:hover {
+    background-color: #2a2d45;
 }
